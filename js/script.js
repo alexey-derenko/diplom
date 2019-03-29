@@ -35,10 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
            
         });
  
- 
-       
- 
- 
+        
  
         let phoneLink = document.querySelector('.phone_link'),
             popup = document.querySelector('.popup'),
@@ -63,15 +60,58 @@ window.addEventListener('DOMContentLoaded', () => {
             }
            
         });
- 
- 
-      
-       
- 
-       
     }
- 
+
+
+    //tabs
+    
+    function tabs() {
+        let slickTrack = document.querySelector('.slick-track'),
+            glazingBlock = document.querySelector('.glazing_block'),
+            imgBlock = document.getElementsByTagName('.glazing_block img'),
+            linkBlock = document.querySelectorAll('.slick-track .glazing_block a');
+            
+
+        slickTrack.addEventListener('click', function(event) {
+            //event.target.classList.contains('glazing_block')
+            if ( event.target.tagName == 'A' || event.target.tagName == 'IMG') {
+                //event.target.tagName('a') =
+               // console.log('slick-track');               
+               for(let i = 0; i < linkBlock.length; i++) {
+                  // if ( (event.target && event.target.tagName == 'A') || (event.target && event.target.tagName == 'IMG') ) {
+                    linkBlock[i].classList.remove('active');
+                  //  linkBlock.className += ' active';
+                 //  } else {
+                   // linkBlock[i].classList.add('active');
+                   // break;
+                 //  }
+
+               }
+               
+              linkBlock[this].classList.add('active');
+               //this.linkBlock.classList.add('active');
+               
+                //console.log(linkBlock); event.target.className += ' active';
+            } else {
+               // linkBlock[i].classList.add('active');
+              console.log('Нема ' + ' slick-track');
+            }
+            
+        });
+
+        // glazingBlock.addEventListener('click', function() {
+        //     console.log('glazing_block');
+        // });
+
+
+    }
+
+
+
+
+
     modal();
+    tabs();
    
  
  
