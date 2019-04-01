@@ -68,6 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
         function hideTabContent(a){
            for (let i = a;  i < tabContent.length; i++) {
             tabContent[i].style.display = 'none';
+            tab[i].lastElementChild.classList.remove('active');
            }
                 
         }
@@ -76,7 +77,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function showTabContent(b) {
            if (tabContent[b].style.display = 'none') {
-            tabContent[b].style.display = 'block';  
+            tabContent[b].style.display = 'block';
+            tab[b].lastElementChild.classList.add('active');  
            } 
         }
 
