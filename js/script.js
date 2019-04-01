@@ -106,7 +106,6 @@ window.addEventListener('DOMContentLoaded', () => {
         let works = document.querySelector('.works'), 
             image = document.querySelectorAll('a img'),
             div = document.body.children[0];
-            
 
         function createDiv() {           
             div.style.cssText = "display: block;\
@@ -135,9 +134,7 @@ window.addEventListener('DOMContentLoaded', () => {
             
             for(let i = 0; i < image.length; i++) {
                 if (target == image[i]) {
-                    
-                    createDiv();
-                                      
+                    createDiv();      
                     image[i].style.cssText = "display: block;\
                     position: fixed;\
                     top: 25%;\
@@ -146,9 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     height: 500px;\
                     z-index: 10;\
                     background-color: rgba(0, 0, 0, 0.9);\
-                    ";              
-                    
-                    
+                    "; 
                 }
             }
 
@@ -156,41 +151,6 @@ window.addEventListener('DOMContentLoaded', () => {
         
         
     }
-
-
-
-
-        // <script type='text/javascript'>
-        //          window.onload = function(){
-        //     var image = document.getElementById('image'), even = true;                  
-        //     image.onclick = function(){
-        //         if (even) {
-        //             this.style.zoom = "2";
-        //             even = false;
-        //         } else {
-        //             this.style.zoom = "1";
-        //             even = true;
-        //         }
-        //     }
-        //         };
-        //  </script>
-
-        // <script type="text/javascript" language="javascript">
-        // function small()
-        // {
-        // var w=document.images[0].width;
-        // var h=document.images[0].height;
-        // document.images[0].width=w*0.5;
-        // document.images[0].height=h*0.5;
-        // }
-        // </script>
-        // <div id="center"><img src="img.jpg" alt="Моя улюблена картинка" id="myImg" onLoad="small()"></div>
-
-   
- 
-    
-   
- 
  
  
  
