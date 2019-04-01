@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
   
     //modal();
+    
     function modal() {
         let modalButton = document.getElementsByTagName('button')[0],
             popupEngineer = document.querySelector('.popup_engineer'),
@@ -97,50 +98,95 @@ window.addEventListener('DOMContentLoaded', () => {
  
     }
         
-       
- 
- 
-        // document.body.addEventListener('click', e =>{
-        //     let target = e.target;
-        //    // for(let i = 0; i < glazingBlock.length; i++) {
-        //     (target.classList.contains('glazing_block') ) ?            
-        //     linkBlock.classList.a
-        //     console.log('пусто');
-           
-        //     //console.log(glazingBlock[i].lastElementChild.classList.add('active'));
-           
-        // });
- 
- 
-        // // Тут нужна помощь не отрабатывает на клик имеджа
-        // function tabsImgClick(event) {
-        //    // let target = event.target;
-        //     //for(let a = 0; a < imgBlock.length; a++) {
-        //         if (imgBlock == target.event) {
-        //             glazingBlock.lastElementChild.classList.add('active');
+    
+    // image
+    
+    function image() {  
+        
+        let works = document.querySelector('.works'), 
+            image = document.querySelectorAll('a img'),
+            div = document.body.children[0];
+            
+
+        function createDiv() {           
+            div.style.cssText = "display: block;\
+            position: fixed;\
+            top: 0;\
+            left: 0;\
+            width: 100%;\
+            height: 100%;\
+            z-index: 10;\
+            background-color: rgba(0, 0, 0, 0.5);\
+            ";
+        }
+
+        div.addEventListener('click', function() {
+            location.reload(true);    
+        });
+        
+        function closeImage() {
+
+            
+        }
+        
+        works.addEventListener('click', function(event) {
+            event.preventDefault();
+            let target = event.target;
+            
+            for(let i = 0; i < image.length; i++) {
+                if (target == image[i]) {
+                    
+                    createDiv();
+                                      
+                    image[i].style.cssText = "display: block;\
+                    position: fixed;\
+                    top: 25%;\
+                    left: 35%;\
+                    width: 500px;\
+                    height: 500px;\
+                    z-index: 10;\
+                    background-color: rgba(0, 0, 0, 0.9);\
+                    ";              
+                    
+                    
+                }
+            }
+
+        });
+        
+        
+    }
+
+
+
+
+        // <script type='text/javascript'>
+        //          window.onload = function(){
+        //     var image = document.getElementById('image'), even = true;                  
+        //     image.onclick = function(){
+        //         if (even) {
+        //             this.style.zoom = "2";
+        //             even = false;
+        //         } else {
+        //             this.style.zoom = "1";
+        //             even = true;
         //         }
         //     }
-       
-           
-       
-          
-        // slickList.addEventListener('click', function(event) {
-        //     let target = event.target;
-        //     for(let i = 0; i < glazingBlock.length; i++) {
-        //         glazingBlock[i].lastElementChild.classList.remove('active');
-        //         if (glazingBlock[i] == target) {
-        //             console.log(target);
-        //             //tabsImgClick(target); // - не работает на клик картинки
-        //             glazingBlock[i].lastElementChild.classList.add('active'); 
-        //         }
-                   
-        //     }
-        // });
+        //         };
+        //  </script>
+
+        // <script type="text/javascript" language="javascript">
+        // function small()
+        // {
+        // var w=document.images[0].width;
+        // var h=document.images[0].height;
+        // document.images[0].width=w*0.5;
+        // document.images[0].height=h*0.5;
+        // }
+        // </script>
+        // <div id="center"><img src="img.jpg" alt="Моя улюблена картинка" id="myImg" onLoad="small()"></div>
+
    
- 
-    //img
- 
-    // function image() {
  
     
    
@@ -151,6 +197,7 @@ window.addEventListener('DOMContentLoaded', () => {
  
     modal();
     tabs();
+    image();
   
  });
  
