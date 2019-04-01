@@ -105,16 +105,17 @@ window.addEventListener('DOMContentLoaded', () => {
         
         let works = document.querySelector('.works'), 
             image = document.querySelectorAll('a img'),
-            div = document.body.children[0];
+            div = document.createElement('div');
 
-        function createDiv() {           
+        function createDiv() {  
+            document.body.appendChild(div);         
             div.style.cssText = "display: block;\
             position: fixed;\
             top: 0;\
             left: 0;\
             width: 100%;\
             height: 100%;\
-            z-index: 10;\
+            z-index: 8;\
             background-color: rgba(0, 0, 0, 0.5);\
             ";
         }
@@ -124,8 +125,6 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         
         function closeImage() {
-
-            
         }
         
         works.addEventListener('click', function(event) {
@@ -148,9 +147,10 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
         });
-        
-        
     }
+
+
+    //tabs 2 typ
  
  
  
