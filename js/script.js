@@ -151,13 +151,50 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     //tabs 2 typ
- 
- 
- 
+      
+    function tabsToo() {
+        let info = document.querySelector('.decoration'),
+            tab = document.querySelectorAll('.decoration_item > .external_link'),
+            tabContent = document.querySelectorAll('.decoration_content .row ');
+
+        function hideTabContent(a){
+           for (let i = a;  i < tabContent.length; i++) {
+            //tabContent[i].style.display = ' none';
+            tabContent[i].style.display = 'block';
+            //tab[i].classList.remove('after_click');
+            tab[i].classList.add('no_click');
+           }
+                
+        }
+
+        hideTabContent(3);
+
+        function showTabContent(b) {
+           if (tabContent[b].style.display == 'none') {
+            tabContent[b].style.display = 'block';
+            tab[b].classList.add('after_click');  
+           } 
+        }
+
+        info.addEventListener('click', function(event) {
+            console.log('тут');
+            let target = event.target;
+            if (target && target.classList.contains('external_link')) {
+                for(let i = 0; i < tab.length; i++) {
+                    if (target == tab[i]) {
+                        hideTabContent(0); 
+                        showTabContent(i);
+                        break;
+                    }
+                }
+            }
+        });
+    }
  
     modal();
     tabs();
     image();
+    tabsToo();
   
  });
  
