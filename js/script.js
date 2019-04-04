@@ -64,6 +64,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let info = document.querySelector('.slick-list'),
             tab = document.querySelectorAll('.glazing_block'),
+            imageTab =document.querySelectorAll('.glazing_block img'),
+            aTab =document.querySelectorAll('.glazing_block a'), 
             tabContent = document.querySelectorAll('.glazing .row');
 
         function hideTabContent(a){
@@ -84,18 +86,18 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         info.addEventListener('click', function(event) {
+            event.preventDefault();
             let target = event.target;
-            if (target && target.classList.contains('glazing_block')) {
+            if (target.classList.contains('glazing_block') || target.tagName === 'IMG' || target.tagName === 'A' ) {
                 for(let i = 0; i < tab.length; i++) {
-                    if (target == tab[i]) {
+                    if (target == tab[i] || target == imageTab[i] || target == aTab[i]) {
                         hideTabContent(0); 
                         showTabContent(i);
                         break;
                     }
                 }
             }
-        });
- 
+        }); 
     }
         
     
@@ -152,49 +154,49 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //tabs 2 typ
       
-    function tabsToo() {
-        let info = document.querySelector('.decoration'),
-            tab = document.querySelectorAll('.decoration_item > .external_link'),
-            tabContent = document.querySelectorAll('.decoration_content .row ');
+    // function tabsToo() {
+    //     let info = document.querySelector('.decoration'),
+    //         tab = document.querySelectorAll('.decoration_item > .external_link'),
+    //         tabContent = document.querySelectorAll('.decoration_content .row ');
 
-        function hideTabContent(a){
-           for (let i = a;  i < tabContent.length; i++) {
-            //tabContent[i].style.display = ' none';
-            tabContent[i].style.display = 'block';
-            //tab[i].classList.remove('after_click');
-            tab[i].classList.add('no_click');
-           }
+    //     function hideTabContent(a){
+    //        for (let i = a;  i < tabContent.length; i++) {
+    //         //tabContent[i].style.display = ' none';
+    //         tabContent[i].style.display = 'block';
+    //         //tab[i].classList.remove('after_click');
+    //         tab[i].classList.add('no_click');
+    //        }
                 
-        }
+    //     }
 
-        hideTabContent(3);
+    //     hideTabContent(3);
 
-        function showTabContent(b) {
-           if (tabContent[b].style.display == 'none') {
-            tabContent[b].style.display = 'block';
-            tab[b].classList.add('after_click');  
-           } 
-        }
+    //     function showTabContent(b) {
+    //        if (tabContent[b].style.display == 'none') {
+    //         tabContent[b].style.display = 'block';
+    //         tab[b].classList.add('after_click');  
+    //        } 
+    //     }
 
-        info.addEventListener('click', function(event) {
-            console.log('тут');
-            let target = event.target;
-            if (target && target.classList.contains('external_link')) {
-                for(let i = 0; i < tab.length; i++) {
-                    if (target == tab[i]) {
-                        hideTabContent(0); 
-                        showTabContent(i);
-                        break;
-                    }
-                }
-            }
-        });
-    }
+    //     info.addEventListener('click', function(event) {
+    //         console.log('тут');
+    //         let target = event.target;
+    //         if (target && target.classList.contains('external_link')) {
+    //             for(let i = 0; i < tab.length; i++) {
+    //                 if (target == tab[i]) {
+    //                     hideTabContent(0); 
+    //                     showTabContent(i);
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     });
+    // }
  
     modal();
     tabs();
     image();
-    tabsToo();
+    //tabsToo();
   
  });
  
